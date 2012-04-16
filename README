@@ -24,14 +24,13 @@ librabbitmq.a
 
 2.出队测试命令：
 ./consumer
-接受如下6个参数
+接受如下5个参数
 	0）rabbitmq-server所在主机
 	1）rabbitmq-server监听端口
 	2）队列名
-	3）消费者个数，每个消费者使用一个线程
-	4）QOS，表示每个消费者同一时间能接受到的消息数，0表示无限制
-	5）autoACK，true表示自动发送回执
-	使用示例：./consumer localhost 5672 queuename 1 0 true
+	3）QOS，表示每个消费者同一时间能接受到的消息数，0表示无限制
+	4）noAck，true表示不需要手动发送回执
+	使用示例：./consumer localhost 5672 queuename 0 true
 
 注：默认client登录帐号为guest/guest，要求此帐号对queue所在的vhost有相关权限
 
