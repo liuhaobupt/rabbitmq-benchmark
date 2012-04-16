@@ -1,19 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <sys/time.h>
 #include <stdint.h>
 #include <amqp.h>
 #include <amqp_framing.h>
 
 #include "utils.h"
-
-static long long timeInMilliseconds(void) {
-	struct timeval tv;
-
-	gettimeofday(&tv,NULL);
-	return (((long long)tv.tv_sec)*1000+(tv.tv_usec)/1000);
-}
 
 int main(int argc, const char *argv[]) {
 
