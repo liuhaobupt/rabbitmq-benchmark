@@ -33,4 +33,5 @@ librabbitmq.a
 	5）autoACK，true表示自动发送回执
 	使用示例：./consumer localhost 5672 queuename 1 0 true
 
+注：默认client登录帐号为guest/guest，要求此帐号对queue所在的vhost有相关权限
 
