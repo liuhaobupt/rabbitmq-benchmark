@@ -1,0 +1,36 @@
+本项目用于对rabbitmq做性能测试。使用rabbitmq-c client。
+类似于如下项目：
+https://github.com/jeffkit/rabbitmq-benchmark
+
+依赖包：
+librabbitmq.a
+
+直接make对项目进行编译
+
+使用方法：
+
+0.使用管理界面建立相关的queue
+
+1.入队测试命令
+./producer  
+接受如下6个参数：
+	0）rabbitmq-server所在主机
+	1）rabbitmq-server监听端口
+	2）队列名
+	3）每条消息大小（单位Byte）
+	4）消息是否持久化
+	5）发送消息总条数
+	使用示例：./producer localhost 5672 queuename 1024 true 100000
+
+2.出队测试命令：
+./consumer
+接受如下6个参数
+	0）rabbitmq-server所在主机
+	1）rabbitmq-server监听端口
+	2）队列名
+	3）消费者个数，每个消费者使用一个线程
+	4）QOS，表示每个消费者同一时间能接受到的消息数，0表示无限制
+	5）autoACK，true表示自动发送回执
+	使用示例：./consumer localhost 5672 queuename 1 0 true
+
+
