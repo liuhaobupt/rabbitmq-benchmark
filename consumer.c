@@ -94,7 +94,7 @@ int main(int argc,const char *argv[]) {
 		count++;
 		if(count%10000 == 0) {
 			long long end = timeInMilliseconds();
-			printf("round %d takes %lld millseconds(10000 messages consumed every round)\n",count/10000,end-start);
+			fprintf(stderr,"round %d takes %lld millseconds(10000 messages consumed every round)\n",count/10000-1,end-start);
 			start = timeInMilliseconds();
 		}
 	}
